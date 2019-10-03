@@ -21,11 +21,11 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    //private alertService: AlertService
+    // private alertService: AlertService
   ) {
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/products']);
     }
   }
 
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     // reset alerts on submit
-    //this.alertService.clear();
+    // this.alertService.clear();
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -59,9 +59,10 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
+          // console.log(this.authenticationService.currentUser);
         },
         error => {
-          //this.alertService.error(error);
+          // this.alertService.error(error);
           this.loading = false;
           alert('username or password invalid');
         });

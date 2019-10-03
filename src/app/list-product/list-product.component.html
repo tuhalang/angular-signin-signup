@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <tr>
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+    </tr>
+
+    <tr *ngFor="let product of products">
+        <th>{{ product.productId }}</th>
+        <th>{{ product.name }}</th>
+        <th>{{ product.price }}</th>
+        <th>{{ product.description }}</th>
+        <th>{{ product.createdAt }}</th>
+        <th>{{ product.updatedAt }}</th>
+        <th><button type="button" class="btn btn-light" (click)="delete(product.productId)" >Delete</button></th>
+    </tr>
+
+</table>
+
+<a [routerLink]="['/products/create']" type="button" class="btn btn-primary">Create</a>

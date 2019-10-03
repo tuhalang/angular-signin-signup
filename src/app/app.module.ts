@@ -11,13 +11,17 @@ import { UserService } from './service/user.service';
 import { AuthenticationService } from './service/authentication.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ListProductComponent } from './list-product/list-product.component';
+import { NewProductComponent } from './new-product/new-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListProductComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,

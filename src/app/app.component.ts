@@ -17,9 +17,10 @@ export class AppComponent {
     private authenticationService: AuthenticationService
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-    console.log(this.currentUser);
-    if(! this.currentUser){
+    if (! this.currentUser){
       this.router.navigate(['/login']);
+    } else {
+      this.router.navigate(['/products']);
     }
   }
 
