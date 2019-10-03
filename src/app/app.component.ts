@@ -9,7 +9,6 @@ import { AuthenticationService } from './service/authentication.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Home';
 
   currentUser: User;
 
@@ -18,14 +17,11 @@ export class AppComponent {
     private authenticationService: AuthenticationService
   ) {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+    console.log(this.currentUser);
+    if(! this.currentUser){
+      this.router.navigate(['/login']);
+    }
   }
 
-  logout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
-  }
 
-  login() {
-    this.router.navigate(['/login']);
-  }
 }

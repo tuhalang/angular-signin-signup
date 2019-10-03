@@ -59,11 +59,11 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
-          console.log('login success');
         },
         error => {
           //this.alertService.error(error);
           this.loading = false;
+          alert('username or password invalid');
         });
   }
 

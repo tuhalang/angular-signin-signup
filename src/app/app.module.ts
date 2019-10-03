@@ -10,12 +10,14 @@ import { RegisterComponent } from './register/register.component';
 import { UserService } from './service/user.service';
 import { AuthenticationService } from './service/authentication.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
